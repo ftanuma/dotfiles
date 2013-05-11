@@ -1,22 +1,3 @@
-;; WEB+DB PRESS plusシリーズ
-;; Emacs実践入門―思考を直感的にコード化し、開発を加速する
-;; サンプルinit.el
-
-;;; 注意事項 - まずはこちらをお読みください
-
-;; このサンプルコードは、書籍『Emacs実践入門』に登場する設定
-;; コードをまとめたものです。一部の設定では、拡張機能のインス
-;; トールが必須となっているため、このファイルに書かれている内
-;; 容の一部はそのまま利用することはできません。
-;; 本書を読み進めながら、必要な設定をあなたのinit.elへコピー
-;; してご利用ください。
-;; なお、拡張機能のインストールが必要な設定については、下記の
-;; ような目印を付けております。
-;; 拡張機能のインストール方法については、該当ページに詳しく記
-;; 述していますので、ぜひ参考にしてください。
-
-;; ▼要拡張機能インストール▼
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 3.2 Emacsの起動と終了                                  ;;
@@ -342,9 +323,9 @@
 ;; (install-elisp "http://www.emacswiki.org/emacs/download/redo+.el")
 (when (require 'redo+ nil t)
   ;; C-' にリドゥを割り当てる
-  (global-set-key (kbd "C-'") 'redo)
+  ;;(global-set-key (kbd "C-'") 'redo)
   ;; 日本語キーボードの場合C-. などがよいかも
-  ;; (global-set-key (kbd "C-.") 'redo)
+  (global-set-key (kbd "C-.") 'redo)
   ) ; ←ここでC-x C-eで設定反映
 
 ;; ▼要拡張機能インストール▼（ただし、Emacs24からはインストール不要）
@@ -406,22 +387,22 @@
 ;; ▼要拡張機能インストール▼
 ;;; P127-128 過去の履歴からペースト──anything-show-kill-ring
 ;; M-yにanything-show-kill-ringを割り当てる
-(define-key global-map (kbd "M-y") 'anything-show-kill-ring)
+;;(define-key global-map (kbd "M-y") 'anything-show-kill-ring)
 
 ;; ▼要拡張機能インストール▼
 ;;; P128-129 moccurを利用する──anything-c-moccur
-(when (require 'anything-c-moccur nil t)
-  (setq
-   ;; anything-c-moccur用 `anything-idle-delay'
-   anything-c-moccur-anything-idle-delay 0.1
-   ;; バッファの情報をハイライトする
-   anything-c-moccur-higligt-info-line-flag t
-   ;; 現在選択中の候補の位置をほかのwindowに表示する
-   anything-c-moccur-enable-auto-look-flag t
-   ;; 起動時にポイントの位置の単語を初期パターンにする
-   anything-c-moccur-enable-initial-pattern t)
-  ;; C-M-oにanything-c-moccur-occur-by-moccurを割り当てる
-  (global-set-key (kbd "C-M-o") 'anything-c-moccur-occur-by-moccur))
+;; (when (require 'anything-c-moccur nil t)
+;;   (setq
+;;    ;; anything-c-moccur用 `anything-idle-delay'
+;;    anything-c-moccur-anything-idle-delay 0.1
+;;    ;; バッファの情報をハイライトする
+;;    anything-c-moccur-higligt-info-line-flag t
+;;    ;; 現在選択中の候補の位置をほかのwindowに表示する
+;;    anything-c-moccur-enable-auto-look-flag t
+;;    ;; 起動時にポイントの位置の単語を初期パターンにする
+;;    anything-c-moccur-enable-initial-pattern t)
+;;   ;; C-M-oにanything-c-moccur-occur-by-moccurを割り当てる
+;;   (global-set-key (kbd "C-M-o") 'anything-c-moccur-occur-by-moccur))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -434,7 +415,6 @@
     "~/.emacs.d/elisp/ac-dict")
   (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
   (ac-config-default))
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

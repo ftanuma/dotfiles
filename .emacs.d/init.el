@@ -62,14 +62,14 @@
 ;; ターミナル以外はツールバー、スクロールバーを非表示
 (when window-system
   ;; tool-barを非表示
-  (tool-bar-mode 0)
+;;  (tool-bar-mode 0)
   ;; scroll-barを非表示
-  (scroll-bar-mode 0))
+;;  (scroll-bar-mode 0))
 
 ;; CocoaEmacs以外はメニューバーを非表示
-(unless (eq window-system 'ns)
+;;(unless (eq window-system 'ns)
   ;; menu-barを非表示
-  (menu-bar-mode 0))
+;;  (menu-bar-mode 0))
 
 
 
@@ -124,14 +124,18 @@
 ;;; P87-89 モードラインに関する設定
 ;; カラム番号も表示
 (column-number-mode t)
+
 ;; ファイルサイズを表示
 (size-indication-mode t)
+
 ;; 時計を表示（好みに応じてフォーマットを変更可能）
 ;; (setq display-time-day-and-date t) ; 曜日・月・日を表示
 ;; (setq display-time-24hr-format t) ; 24時表示
 (display-time-mode t)
+
 ;; バッテリー残量を表示
-(display-battery-mode t)
+;;(display-battery-mode t)
+
 ;; リージョン内の行数と文字数をモードラインに表示する（範囲指定時のみ）
 ;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
 (defun count-lines-and-chars ()
@@ -149,7 +153,7 @@
 ;;; P90 タイトルバーにファイルのフルパスを表示
 (setq frame-title-format "%f")
 ;; 行番号を常に表示する
-;; (global-linum-mode t)
+(global-linum-mode t)
 
 
 
